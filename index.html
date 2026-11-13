@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СберНедвижка | Коммерческая недвижимость и инвесторы в Батуми</title>
+    <style>
+        :root {
+            --bg-base: #f8fbf9;
+            --bg-surface: #ffffff;
+            --emerald-dark: #064e3b;
+            --emerald-main: #047857;
+            --emerald-light: #ecfdf5;
+            --gold: #c5a059;
+            --gold-dark: #9e7d3b;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #d1fae5;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text-main); background-color: var(--bg-base); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(4, 120, 87, 0.04); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; }
+        
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        
+        /* Кнопка WhatsApp слева сверху */
+        .whatsapp-top-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #25D366;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+        }
+        .whatsapp-top-btn:hover { background: #20ba5a; }
+
+        .logo-block { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gold); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3); }
+        .logo-text span { display: block; font-size: 18px; font-weight: bold; color: var(--emerald-dark); text-transform: uppercase; letter-spacing: 1px; }
+        .logo-text span span { color: var(--gold); }
+        .logo-text small { font-size: 11px; color: var(--emerald-main); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+        
+        .btn-primary { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3); display: inline-block; text-align: center; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4); }
+        
+        .btn-whatsapp { background: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s; box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp:hover { background: #20ba5a; }
+
+        .hero { padding: 80px 0; background: linear-gradient(to bottom, #ffffff, var(--bg-base)); text-align: center; border-bottom: 1px solid #e2e8f0; }
+        .badge { display: inline-block; background: var(--emerald-light); color: var(--emerald-dark); padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 24px; border: 1px solid #a7f3d0; }
+
+.hero h1 { font-size: 42px; font-weight: 800; color: var(--emerald-dark); margin-bottom: 20px; line-height: 1.2; max-width: 850px; margin-left: auto; margin-right: auto; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px auto; }
+        
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 60px; }
+        .metric-card { background: white; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(4, 120, 87, 0.04); text-align: center; }
+        .metric-value { font-size: 32px; font-weight: bold; color: var(--emerald-main); margin-bottom: 8px; }
+        .metric-label { font-size: 14px; color: var(--text-muted); font-weight: 500; }
+
+        .section { padding: 80px 0; }
+        .section-title { text-align: center; font-size: 30px; font-weight: bold; color: var(--emerald-dark); margin-bottom: 12px; }
+        .section-desc { text-align: center; color: var(--text-muted); max-width: 650px; margin: 0 auto 50px auto; font-size: 15px; }
+        
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 35px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: border-color 0.3s; }
+        .card:hover { border-color: var(--gold); }
+        .card-tag { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--gold-dark); background: #fdf8ef; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; width: fit-content; border: 1px solid #fae8c8; }
+        .card h3 { font-size: 22px; font-weight: bold; color: var(--emerald-dark); margin-bottom: 12px; }
+        .card p { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .service-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.3s; }
+        .service-card:hover { border-color: var(--emerald-main); transform: translateY(-3px); }
+        .service-num { width: 36px; height: 36px; background: var(--emerald-light); color: var(--emerald-main); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; margin-bottom: 16px; border: 1px solid #a7f3d0; }
+        .service-card h3 { font-size: 18px; font-weight: bold; color: var(--emerald-dark); margin-bottom: 8px; }
+        .service-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+        
+        .service-link { font-size: 12px; font-weight: bold; color: var(--gold); text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
+        .service-link:hover { color: var(--gold-dark); }
+
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .blog-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.3s; }
+        .blog-card:hover { border-color: var(--gold); }
+        .blog-badge { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px; letter-spacing: 1px; }
+        .blog-card h3 { font-size: 17px; font-weight: bold; color: var(--emerald-dark); margin-bottom: 10px; }
+        .blog-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+
+.assistant-section { background: linear-gradient(135deg, var(--emerald-dark) 0%, #022c22); color: white; padding: 60px 20px; border-radius: 20px; text-align: center; margin: 40px 0; box-shadow: 0 10px 30px rgba(6, 78, 59, 0.2); border: 1px solid #047857; }
+        .assistant-section h2 { font-size: 28px; margin-bottom: 12px; color: white; }
+        .assistant-section p { font-size: 16px; color: #a7f3d0; max-width: 600px; margin: 0 auto 30px auto; }
+
+        footer { background: var(--emerald-dark); color: white; padding: 50px 0; text-align: center; font-size: 14px; border-top: 1px solid #047857; }
+        footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        footer p { color: #a7f3d0; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .header-left { gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="header-left">
+                <!-- Ваша личная кнопка WhatsApp слева сверху -->
+                <a href="https://wa.me/995595577405?text=Здравствуйте!%20Меня%20интересует%20недвижимость." target="_blank" class="whatsapp-top-btn">
+                    <span>💬 WhatsApp</span>
+                </a>
+                <div class="logo-block">
+                    <div class="logo-icon">◆</div>
+                    <div class="logo-text">
+                        <span>Сбер<span>Недвижка</span></span>
+                        <small>Батуми • Коммерция</small>
+                    </div>
+                </div>
+            </div>
+            <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary">Перейти в канал</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge">Инвестиционный консалтинг и управление активами в Батуми</div>
+            <h1>Инвестиции в <span>коммерческую недвижимость</span> полный цикл</h1>
+            <p>Работаем с инвесторами-одиночками по покупке готовых объектов под ключ, так и формируем закрытые парные пулы ($150k–$250k) для входа в крупные ликвидные активы с доходностью 12–15% годовых.</p>
+            <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="padding: 14px 28px; font-size: 16px;">Перейти в Telegram-канал</a>
+
+            <div class="metrics">
+                <div class="metric-card">
+                    <div class="metric-value">6–8 лет</div>
+                    <div class="metric-label">Целевой срок окупаемости объектов</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">12–15%</div>
+                    <div class="metric-label">Прогнозируемый чистый Net ROI</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">100% Turnkey</div>
+                    <div class="metric-label">Сопровождение от аудита до реинвестирования</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Форматы инвестирования под ваши задачи</h2>
+            <p class="section-desc">Сопровождаем инвесторов с любым форматом капитала: от самостоятельной покупки до участия в совместных пулах.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <div>
+                        <span class="card-tag">Инвесторам-одиночкам</span>
+                        <h3>Готовый объект под ключ</h3>
+                        <p>Полное сопровождение индивидуального инвестора при покупке готового коммерческого объекта. Подбираем ликвидный актив под ваш бюджет, проверяем юридическую чистоту и упаковываем сделку от первого просмотра до получения ключей и арендатора.</p>
+
+</div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="text-align: center;">Подобрать объект в канале</a>
+                </div>
+                <div class="card" style="background: #fdfbf7;">
+                    <div>
+                        <span class="card-tag">Партнерские пулы</span>
+                        <h3>Со-инвестирование ($150k–$250k)</h3>
+                        <p>Объединяем 2 инвесторов для покупки крупных институциональных объектов ($500k–$700k+) с высокой доходностью. Идеально для доступа к премиальной коммерции с минимальным порогом входа и равными юридическими правами.</p>
+                    </div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="text-align: center;">Войти в парный пул</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-base);">
+        <div class="container">
+            <h2 class="section-title">Весь портфель наших услуг</h2>
+            <p class="section-desc">Закрываем все этапы жизненного цикла инвестиционного актива — от аудита до реинвестирования.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div>
+                        <div class="service-num">01</div>
+                        <h3>Независимый инвестаудит</h3>
+                        <p>Глубокая проверка объекта в реестре NAPR, аудит мощностей (кВт), качества вытяжки, пешеходного трафика и реальной окупаемости.</p>
+                    </div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Заказать аудит →</a>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <div class="service-num">02</div>
+                        <h3>Юридическое сопровождение</h3>
+                        <p>Регистрация ООО в Грузии, структурирование долей инвесторов, безопасные расчеты и оптимизация налогов с зачетом 18% НДС.</p>
+                    </div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Узнать о структуре ООО →</a>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <div class="service-num">03</div>
+                        <h3>Посадка надежного бизнеса</h3>
+                        <p>Подбор устойчивых масштабирующихся бизнесов и арендаторов с прозрачной финмоделью и долгосрочной индексацией ставок.</p>
+                    </div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Подобрать арендатора →</a>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <div class="service-num">04</div>
+                        <h3>Asset Management 24/7</h3>
+                        <p>Полное дистанционное управление объектом, контроль арендных платежей и ежемесячное перечисление дивидендов на ваши счета.</p>
+                    </div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Подключить управление →</a>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <div class="service-num">05</div>
+                        <h3>Выход из активов</h3>
+                        <p>Профессиональная продажа готового арендного бизнеса по закрытым каналам с максимальной капитализацией и без публичного спама.</p>
+                    </div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Оценить актив →</a>
+                </div>
+
+<div class="service-card">
+                    <div>
+                        <div class="service-num">06</div>
+                        <h3>Стратегия реинвестирования</h3>
+                        <p>Регулярный пересмотр инвестиционного портфеля, реинвестирование дивидендов и покупка новых ликвидных объектов для сложного процента.</p>
+                    </div>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Обсудить стратегию →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК: Партнерская экосистема и сотрудничество -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Партнерская экосистема и сотрудничество</h2>
+            <p class="section-desc">Объединяем экспертов рынка коммерческой недвижимости Батуми. Открыты к синергии и обмену опытом.</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div>
+                        <div class="blog-badge">Агентам и брокерам</div>
+                        <h3>Коллаборация по сделкам</h3>
+                        <p>Делимся комиссионными и упаковываем сложные коммерческие объекты для ваших инвесторов на прозрачных партнерских условиях.</p>
+                    </div>
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20обсудить%20партнерство%20по%20сделкам." target="_blank" class="btn-whatsapp">💬 Написать в WhatsApp</a>
+                </div>
+
+                <div class="blog-card">
+                    <div>
+                        <div class="blog-badge">Собственникам земли</div>
+                        <h3>Развитие участков под ГАБ</h3>
+                        <p>Ищем участки под строительство коммерческих помещений или готовых арендных бизнесов под ключ с привлечением нашего пула инвесторов.</p>
+                    </div>
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20У%20меня%20есть%20участок%20под%20ГАБ." target="_blank" class="btn-whatsapp">💬 Написать в WhatsApp</a>
+                </div>
+
+                <div class="blog-card">
+                    <div>
+                        <div class="blog-badge">Девелоперам</div>
+                        <h3>Продажа ритейл-помещений</h3>
+                        <p>Помогаем грамотно спроектировать и быстро реализовать коммерческие площади на первых этажах новостроек под сетевой ритейл.</p>
+                    </div>
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Интересует%20продажа%20ритейл-помещений." target="_blank" class="btn-whatsapp">💬 Написать в WhatsApp</a>
+                </div>
+
+                <div class="blog-card">
+                    <div>
+                        <div class="blog-badge">Юристам и экспертам</div>
+                        <h3>Профессиональный нетворкинг</h3>
+                        <p>Экспертные разборы законодательства Грузии, налогообложения 18% НДС, структурирования долей и защиты инвестиций в коммерцию.</p>
+                    </div>
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20обсудить%20профессиональный%20нетворкинг." target="_blank" class="btn-whatsapp">💬 Написать в WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- ВЫДЕЛЕННЫЙ БЛОК ЛИЧНОГО АССИСТЕНТА 24/7 (WhatsApp) -->
+            <div class="assistant-section">
+                <h2>Нужна персональная консультация?</h2>
+                <p>Напишите мне напрямую в WhatsApp. Отвечу на любые вопросы по объектам, расчетам ROI и условиям входа в пулы.</p>
+                <a href="https://wa.me/995595577405?text=Здравствуйте!%20Мне%20нужна%20персональная%20консультация%20по%20недвижимости." target="_blank" class="btn-whatsapp" style="padding: 14px 28px; font-size: 15px;">💬 Написать в WhatsApp 24/7</a>
+            </div>
+
+        </div>
+    </section>
+
+<footer>
+        <div class="container">
+            <p>© 2026 СберНедвижка. Коммерческая недвижимость, инвест-пулы и сопровождение в Батуми.</p>
+            <p style="margin-top: 10px;">Канал в Telegram: <a href="https://t.me/batumi_commercial_invest" target="_blank">@batumi_commercial_invest</a> | WhatsApp: <a href="https://wa.me/995595577405" target="_blank">+995 595 57 74 05</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
