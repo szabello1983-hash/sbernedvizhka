@@ -1,168 +1,48 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СберНедвижка | Коммерческая недвижимость и инвесторы в Батуми</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #0f172a; background-color: #ffffff; line-height: 1.6; }
-        header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid #f1f5f9; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; }
-        .logo-block { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 40px; height: 40px; background: #047857; color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; }
-        .logo-text span { display: block; font-size: 18px; font-weight: bold; color: #0f172a; }
-        .logo-text small { font-size: 11px; color: #047857; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
-        .btn-primary { background: #047857; color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background 0.2s; }
-        .btn-primary:hover { background: #065f46; }
-        
-        .hero { padding: 80px 0; background: linear-gradient(to bottom, #f8fafc, #ffffff); text-align: center; }
-        .badge { display: inline-block; background: #ecfdf5; color: #047857; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 24px; }
-        .hero h1 { font-size: 42px; font-weight: 800; color: #0f172a; margin-bottom: 20px; line-height: 1.2; max-width: 850px; margin-left: auto; margin-right: auto; }
-        .hero h1 span { color: #047857; }
-        .hero p { font-size: 18px; color: #475569; max-width: 700px; margin: 0 auto 40px auto; }
-        
-        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 60px; }
-        .metric-card { background: white; padding: 30px; border-radius: 16px; border: 1px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); text-align: center; }
-        .metric-value { font-size: 32px; font-weight: bold; color: #047857; margin-bottom: 8px; }
-        .metric-label { font-size: 14px; color: #64748b; font-weight: 500; }
-
-        .section { padding: 80px 0; }
-        .section-title { text-align: center; font-size: 30px; font-weight: bold; color: #0f172a; margin-bottom: 12px; }
-        .section-desc { text-align: center; color: #64748b; max-width: 600px; margin: 0 auto 50px auto; font-size: 15px; }
-        
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 35px; display: flex; flex-direction: column; justify-content: space-between; }
-        .card.highlight { background: #ecfdf533; border-color: #a7f3d0; }
-        .card-tag { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; color: #047857; background: #ecfdf5; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; width: fit-content; }
-        .card h3 { font-size: 22px; font-weight: bold; color: #0f172a; margin-bottom: 12px; }
-        .card p { font-size: 14px; color: #475569; margin-bottom: 24px; line-height: 1.6; }
-        
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-.service-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
-        .service-num { width: 36px; height: 36px; background: #ecfdf5; color: #047857; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; margin-bottom: 16px; }
-        .service-card h3 { font-size: 18px; font-weight: bold; color: #0f172a; margin-bottom: 8px; }
-        .service-card p { font-size: 13px; color: #64748b; margin-bottom: 20px; }
-        .service-link { font-size: 12px; font-weight: bold; color: #047857; text-decoration: none; }
-        
-        footer { background: #0f172a; color: white; padding: 40px 0; text-align: center; font-size: 14px; }
-        footer a { color: #34d399; text-decoration: none; font-weight: 600; }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="container header-inner">
-            <div class="logo-block">
-                <div class="logo-icon">С</div>
-                <div class="logo-text">
-                    <span>СберНедвижка</span>
-                    <small>Батуми • Коммерция & Услуги</small>
-                </div>
-            </div>
-            <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary">Связаться в Telegram</a>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="badge">Инвестиционный консалтинг и управление активами в Батуми</div>
-            <h1>Инвестиции в <span>коммерческую недвижимость</span> полный цикл</h1>
-            <p>Работаем с инвесторами-одиночками по покупке готовых объектов под ключ, так и формируем закрытые парные пулы ($150k–$250k) для входа в крупные ликвидные активы с доходностью 12–15% годовых.</p>
-            <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="padding: 14px 28px; font-size: 16px;">Обсудить инвестиции в Telegram</a>
-
-            <div class="metrics">
-                <div class="metric-card">
-                    <div class="metric-value">6–8 лет</div>
-                    <div class="metric-label">Целевой срок окупаемости объектов</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">12–15%</div>
-                    <div class="metric-label">Прогнозируемый чистый Net ROI</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">100% Turnkey</div>
-                    <div class="metric-label">Сопровождение от аудита до реинвестирования</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: white;">
-        <div class="container">
-            <h2 class="section-title">Форматы инвестирования под ваши задачи</h2>
-            <p class="section-desc">Сопровождаем инвесторов с любым форматом капитала: от самостоятельной покупки до участия в совместных пулах.</p>
-            <div class="grid-2">
-                <div class="card">
-                    <div>
-                        <span class="card-tag">Инвесторам-одиночкам</span>
-                        <h3>Готовый объект под ключ</h3>
-                        <p>Полное сопровождение индивидуального инвестора при покупке готового коммерческого объекта. Подбираем ликвидный актив под ваш бюджет, проверяем юридическую чистоту и упаковываем сделку от первого просмотра до получения ключей и арендатора.</p>
-                    </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="text-align: center;">Подобрать объект в Telegram</a>
-</div>
-                <div class="card highlight">
-                    <div>
-                        <span class="card-tag">Партнерские пулы</span>
-                        <h3>Со-инвестирование ($150k–$250k)</h3>
-                        <p>Объединяем 2 инвесторов для покупки крупных институциональных объектов ($500k–$700k+) с высокой доходностью. Идеально для доступа к премиальной коммерции с минимальным порогом входа и равными юридическими правами.</p>
-                    </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="text-align: center;">Войти в парный пул</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: #f8fafc;">
+<section class="section" style="background: rgba(0,0,0,0.2);">
         <div class="container">
             <h2 class="section-title">Весь портфель наших услуг</h2>
-            <p class="section-desc">Закрываем все этапы жизненного цикла инвестиционного актива — от аудита до реинвестирования.</p>
+            <p class="section-desc">Полностью закрываем все этапы жизненного цикла вашего актива — от аудита до продажи или реинвестирования.</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div>
-                        <div class="service-num">01</div>
+                        <div class="service-num">01 / AUDIT</div>
                         <h3>Независимый инвестаудит</h3>
-                        <p>Глубокая проверка объекта в реестре NAPR, аудит мощностей (кВт), качества вытяжки, пешеходного трафика и реальной окупаемости.</p>
+                        <p>Глубокая проверка объекта в реестре NAPR, аудит электромощностей (кВт), вытяжки, пешеходного трафика и реальной окупаемости.</p>
                     </div>
                     <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Заказать аудит →</a>
                 </div>
 
                 <div class="service-card">
                     <div>
-                        <div class="service-num">02</div>
+                        <div class="service-num">02 / LEGAL</div>
                         <h3>Юридическое сопровождение</h3>
-                        <p>Регистрация ООО в Грузии, структурирование долей инвесторов, безопасные расчеты и оптимизация налогов с зачетом 18% НДС.</p>
+                        <p>Регистрация ООО в Грузии, структурирование долей инвесторов, безопасные международные расчеты и оптимизация налогов с зачетом 18% НДС.</p>
                     </div>
                     <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Узнать о структуре ООО →</a>
                 </div>
 
                 <div class="service-card">
                     <div>
-                        <div class="service-num">03</div>
+                        <div class="service-num">03 / TENANTS</div>
                         <h3>Посадка надежного бизнеса</h3>
-                        <p>Подбор устойчивых масштабирующихся бизнесов и арендаторов с прозрачной финмоделью и долгосрочной индексацией ставок.</p>
+                        <p>Подбор устойчивых масштабирующихся сетевых бизнесов и арендаторов с прозрачной финмоделью и долгосрочной индексацией ставок.</p>
                     </div>
                     <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Подобрать арендатора →</a>
                 </div>
 
                 <div class="service-card">
                     <div>
-                        <div class="service-num">04</div>
+                        <div class="service-num">04 / ASSET MGMT</div>
                         <h3>Asset Management 24/7</h3>
-                        <p>Полное дистанционное управление объектом, контроль арендных платежей и ежемесячное перечисление дивидендов на ваши счета.</p>
+                        <p>Полное дистанционное управление объектом, контроль арендных платежей, техническое обслуживание и ежемесячный отчет инвесторам.</p>
                     </div>
                     <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Подключить управление →</a>
                 </div>
 
                 <div class="service-card">
                     <div>
-                        <div class="service-num">05</div>
+                        <div class="service-num">05 / EXIT</div>
                         <h3>Выход из активов</h3>
                         <p>Профессиональная продажа готового арендного бизнеса по закрытым каналам с максимальной капитализацией и без публичного спама.</p>
                     </div>
@@ -171,9 +51,9 @@
 
                 <div class="service-card">
                     <div>
-                        <div class="service-num">06</div>
+                        <div class="service-num">06 / REINVEST</div>
                         <h3>Стратегия реинвестирования</h3>
-<p>Регулярный пересмотр инвестиционного портфеля, реинвестирование дивидендов и покупка новых ликвидных объектов для сложного процента.</p>
+                        <p>Регулярный пересмотр инвестиционного портфеля, реинвестирование дивидендов и покупка новых ликвидных объектов для сложного процента.</p>
                     </div>
                     <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Обсудить стратегию →</a>
                 </div>
