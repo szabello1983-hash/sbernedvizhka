@@ -6,22 +6,23 @@
     <title>СберНедвижка | Коммерческая недвижимость и ГАБ в Батуми</title>
     <style>
         :root {
-            --bg-base: #0f0f10;
-            --bg-surface: #18181a;
-            --bg-card: #202023;
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --text-main: #f4f4f6;
-            --text-muted: #9ba1a6;
-            --border-color: #2e2e33;
-            --accent-glow: rgba(212, 175, 55, 0.15);
+            /* Премиальная светлая палитра: жемчужно-белый фон и графитово-золотые акценты */
+            --bg-base: #f7f8f6;
+            --bg-surface: #ffffff;
+            --bg-card: #ffffff;
+            --gold: #b8972e;
+            --gold-dark: #967820;
+            --text-main: #1a211d; /* Глубокий графитово-зеленый оттенок для идеального чтения */
+            --text-muted: #5a665e;
+            --border-color: #dbe2dd;
+            --shadow-subtle: 0 4px 20px rgba(26, 33, 29, 0.06);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-base);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
         header {
@@ -32,24 +33,27 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
         .logo-container {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         .logo-icon {
             color: var(--gold);
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
         }
         .logo {
             font-size: 20px;
             font-weight: 700;
             letter-spacing: 2px;
-            color: var(--gold);
+            color: var(--text-main);
             text-transform: uppercase;
+        }
+        .logo span {
+            color: var(--gold);
         }
         .tagline {
             font-size: 11px;
@@ -65,31 +69,32 @@
         }
         .hero {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
+            padding: 50px 20px;
+            background: var(--bg-surface);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: var(--shadow-subtle);
         }
         .hero h1 {
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 16px;
             font-weight: 600;
             letter-spacing: 0.5px;
+            color: var(--text-main);
         }
         .hero p {
             color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 28px;
+            font-size: 16px;
+            margin-bottom: 30px;
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gold) 0%, #aa8c2c 100%);
-            color: #0f0f10;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #ffffff;
             padding: 14px 32px;
             border-radius: 6px;
             text-decoration: none;
@@ -98,28 +103,28 @@
             letter-spacing: 1px;
             font-size: 13px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 15px rgba(184, 151, 46, 0.25);
         }
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 20px rgba(184, 151, 46, 0.35);
         }
         .section-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 12px;
             color: var(--text-main);
             border-left: 3px solid var(--gold);
-            padding-left: 12px;
+padding-left: 12px;
             letter-spacing: 0.5px;
         }
         .subtitle-desc {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 30px;
         }
         .services-grid {
-display: grid;
+            display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
             margin-bottom: 40px;
@@ -130,11 +135,10 @@ display: grid;
         .service-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 24px;
+            padding: 26px;
             border-radius: 8px;
+            box-shadow: var(--shadow-subtle);
             transition: border-color 0.3s, transform 0.3s;
-            position: relative;
-            overflow: hidden;
         }
         .service-card:hover {
             border-color: var(--gold);
@@ -151,28 +155,28 @@ display: grid;
         .service-card h3 {
             color: var(--text-main);
             margin-bottom: 12px;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 600;
         }
         .service-card p {
             color: var(--text-muted);
-            font-size: 13px;
-            margin-bottom: 16px;
+            font-size: 14px;
+            margin-bottom: 18px;
         }
         .service-link {
-            color: var(--gold);
+            color: var(--gold-dark);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             transition: color 0.2s;
         }
         .service-link:hover {
-            color: var(--gold-light);
+            color: var(--gold);
         }
         footer {
             text-align: center;
@@ -190,7 +194,7 @@ display: grid;
         <div class="logo-container">
             <span class="logo-icon">◆</span>
             <div>
-                <div class="logo">СберНедвижка</div>
+                <div class="logo">Сбер<span>Недвижка</span></div>
                 <div class="tagline">Коммерческие активы • Батуми</div>
             </div>
         </div>
@@ -206,44 +210,4 @@ display: grid;
         <h2 class="section-title">Весь портфель наших услуг</h2>
         <p class="subtitle-desc">Полностью закрываем все этапы жизненного цикла вашего актива — от аудита до продажи или реинвестирования.</p>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-code">01 / AUDIT</div>
-                <h3>Независимый инвестаудит</h3>
-                <p>Глубокая проверка объекта в реестре NAPR, аудит электромощностей (кВт), вытяжки, пешеходного трафика и реальной окупаемости.</p>
-                <a href="https://t.me/szabello" class="service-link">Заказать аудит →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-code">02 / LEGAL</div>
-                <h3>Юридическое сопровождение</h3>
-                <p>Регистрация ООО в Грузии, структурирование долей инвесторов, безопасные международные расчеты и оптимизация налогов с зачетом 18% НДС.</p>
-                <a href="https://t.me/szabello" class="service-link">Узнать о структуре ООО →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-code">03 / TENANTS</div>
-<h3>Посадка надежного бизнеса</h3>
-                <p>Подбор устойчивых масштабирующихся сетевых бизнесов и арендаторов с прозрачной финмоделью и долгосрочной индексацией ставок.</p>
-                <a href="https://t.me/szabello" class="service-link">Подобрать арендатора →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-code">04 / ASSET MGMT</div>
-                <h3>Asset Management 24/7</h3>
-                <p>Полное операционное управление коммерческим объектом, контроль арендных платежей, техническое сопровождение и защита интересов собственника.</p>
-                <a href="https://t.me/szabello" class="service-link">Обсудить управление →</a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2026 СберНедвижка. Все права защищены. Батуми, Грузия.
-    </footer>
-
-</body>
-</html>
-Telegram
-Светлана недвижимость
-Твой личный агент по инвестициям в Батуми:недвижимость/коммерция/земля
-ОТПРАВИТЬ СООБЩЕНИЕ
+        <div class
