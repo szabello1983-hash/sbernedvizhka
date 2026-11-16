@@ -54,6 +54,9 @@
         .btn-primary { background: linear-gradient(135deg, var(--emerald-main) 0%, var(--emerald-dark) 100%); color: white; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(4, 120, 87, 0.25); display: inline-block; text-align: center; white-space: nowrap; flex-shrink: 0; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(4, 120, 87, 0.35); }
         
+        .btn-whatsapp-main { background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-align: center; white-space: nowrap; }
+        .btn-whatsapp-main:hover { background: #20ba5a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+        
         .btn-whatsapp { background: #25D366; color: white; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s; box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3); text-align: center; }
         .btn-whatsapp:hover { background: #20ba5a; }
 
@@ -116,6 +119,7 @@
             
             .whatsapp-top-btn { padding: 6px 10px; font-size: 11px; gap: 4px; }
             .btn-primary { padding: 8px 12px; font-size: 11px; }
+            .btn-whatsapp-main { padding: 10px 14px; font-size: 12px; }
 
             .hero { padding: 45px 0; }
             .hero h1 { font-size: 26px; line-height: 1.25; margin-bottom: 15px; }
@@ -136,9 +140,10 @@
             .card p, .service-card p, .blog-card p { font-size: 13px; margin-bottom: 16px; }
 
             .card .btn-primary, 
+            .card .btn-whatsapp-main,
             .service-card .service-link, 
             .blog-card .btn-whatsapp,
-            .assistant-section .btn-whatsapp,
+            .assistant-section .btn-whatsapp-main,
             .hero .btn-primary {
                 width: 100%;
                 display: flex;
@@ -166,7 +171,8 @@
     <header>
         <div class="container header-inner">
             <div class="header-left">
-                <a href="https://wa.me/995595577405?text=Здравствуйте!%20Меня%20интересует%20недвижимость." target="_blank" class="whatsapp-top-btn">
+                <!-- Прямая связь с вами в шапке -->
+                <a href="https://wa.me/995595577405?text=Здравствуйте!%20Пишу%20с%20сайта%20по%20поводу%20недвижимости." target="_blank" class="whatsapp-top-btn">
                     <span>💬 WhatsApp</span>
                 </a>
                 <div class="logo-block">
@@ -177,16 +183,20 @@
                     </div>
                 </div>
             </div>
-            <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary">В канал</a>
+            <!-- Ссылка на базу / Telegram-канал в шапке -->
+            <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary">В канал с базой</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <div class="badge">Инвестиционный консалтинг и управление активами в Батуми</div>
+            <!-- Новогодний акцент -->
+            <div class="badge" style="background: var(--gold-light); color: var(--gold-dark); border: 1px solid #fae8c8;">❄️ Новогодние инвестиционные итоги и стратегии 2026</div>
             <h1>Инвестиции в <span style="color: var(--emerald-main);">коммерческую недвижимость</span> — <span class="gold">полный цикл</span></h1>
             <p>Работаем с инвесторами-одиночками по покупке готовых объектов под ключ, а также формируем закрытые парные пулы (<span style="color: var(--emerald-main); font-weight: 600;">$150k–$250k</span>) для входа в крупные ликвидные активы с доходностью <span style="color: var(--gold-dark); font-weight: 600;">12–15% годовых</span>.</p>
-            <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="padding: 14px 28px; font-size: 15px;">Перейти в Telegram-канал</a>
+            
+            <!-- Главный призыв ведет на личный WhatsApp для индивидуального подбора -->
+            <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20подобрать%20объект%20или%20войти%20в%20пул." target="_blank" class="btn-whatsapp-main" style="padding: 14px 28px; font-size: 15px;">💬 Подобрать объект в личным WhatsApp</a>
 
             <div class="metrics">
                 <div class="metric-card">
@@ -216,7 +226,8 @@
                         <h3>Готовый объект под ключ</h3>
                         <p>Полное сопровождение индивидуального инвестора при покупке готового коммерческого объекта. Подбираем ликвидный актив под ваш бюджет, проверяем юридическую чистоту и упаковываем сделку от первого просмотра до получения ключей и арендатора.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="text-align: center;">Подобрать объект в канале</a>
+                    <!-- Индивидуальный подбор -> на WhatsApp -->
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20подобрать%20готовый%20объект%20под%20ключ." target="_blank" class="btn-whatsapp-main" style="text-align: center;">💬 Подобрать объект в WhatsApp</a>
                 </div>
                 <div class="card" style="background: #fdfbf7;">
                     <div>
@@ -224,7 +235,8 @@
                         <h3>Со-инвестирование (<span style="color: var(--gold-dark);">$150k–$250k</span>)</h3>
                         <p>Объединяем 2 инвесторов для покупки крупных институциональных объектов ($500k–$700k+) с высокой доходностью. Идеально для доступа к премиальной коммерции с минимальным порогом входа и равными юридическими правами.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="text-align: center; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);">Войти в парный пул</a>
+                    <!-- Парный пул -> на WhatsApp -->
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Интересует%20участие%20в%20парном%20пуле%20(%24150k-%24250k)." target="_blank" class="btn-whatsapp-main" style="text-align: center; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);">💬 Войти в парный пул</a>
                 </div>
             </div>
         </div>
@@ -242,7 +254,7 @@
                         <h3>Независимый инвестаудит</h3>
                         <p>Глубокая проверка объекта в реестре NAPR, аудит мощностей (кВт), качества вытяжки, пешеходного трафика и реальной окупаемости.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Заказать аудит →</a>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Смотреть разборы в канале →</a>
                 </div>
 
                 <div class="service-card">
@@ -251,7 +263,7 @@
                         <h3>Юридическое сопровождение</h3>
                         <p>Регистрация ООО в Грузии, структурирование долей инвесторов, безопасные расчеты и оптимизация налогов с зачетом <span style="color: var(--emerald-main); font-weight: 600;">18% НДС</span>.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Узнать о структуре ООО →</a>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Читать гайды в канале →</a>
                 </div>
 
                 <div class="service-card">
@@ -260,7 +272,7 @@
                         <h3>Посадка надежного бизнеса</h3>
                         <p>Подбор устойчивых масштабирующихся бизнесов и арендаторов с прозрачной финмоделью и долгосрочной индексацией ставок.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Подобрать арендатора →</a>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">База арендаторов в канале →</a>
                 </div>
 
                 <div class="service-card">
@@ -269,7 +281,7 @@
                         <h3>Asset Management 24/7</h3>
                         <p>Полное дистанционное управление объектом, контроль арендных платежей и ежемесячное перечисление дивидендов на ваши счета.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Подключить управление →</a>
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20подключить%20Asset%20Management." target="_blank" class="service-link">Обсудить управление →</a>
                 </div>
 
                 <div class="service-card">
@@ -278,7 +290,7 @@
                         <h3>Выход из активов</h3>
                         <p>Профессиональная продажа готового арендного бизнеса по закрытым каналам с максимальной капитализацией и без публичного спама.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Оценить актив →</a>
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20оценить%20актив%20для%20продажи." target="_blank" class="service-link">Оценить актив →</a>
                 </div>
 
                 <div class="service-card">
@@ -287,7 +299,7 @@
                         <h3>Стратегия реинвестирования</h3>
                         <p>Регулярный пересмотр инвестиционного портфеля, реинвестирование дивидендов и покупка новых ликвидных объектов для сложного процента.</p>
                     </div>
-                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="service-link">Обсудить стратегию →</a>
+                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20обсудить%20стратегию%20реинвестирования." target="_blank" class="service-link">Обсудить стратегию →</a>
                 </div>
             </div>
         </div>
@@ -333,7 +345,7 @@
                         <h3>Профессиональный нетворкинг</h3>
                         <p>Экспертные разборы законодательства Грузии, налогообложения 18% НДС, структурирования долей и защиты инвестиций в коммерцию.</p>
                     </div>
-                    <a href="https://wa.me/995595577405?text=Здравствуйте!%20Хочу%20обсудить%20профессиональный%20нетворкинг." target="_blank" class="btn-whatsapp">💬 Написать в WhatsApp</a>
+                    <a href="https://t.me/batumi_commercial_invest" target="_blank" class="btn-primary" style="text-align: center; font-size: 11px; padding: 10px;">Читать обсуждения в канале</a>
                 </div>
             </div>
 
@@ -341,7 +353,7 @@
             <div class="assistant-section">
                 <h2>Нужна персональная консультация?</h2>
                 <p>Напишите мне напрямую в WhatsApp. Отвечу на любые вопросы по объектам, расчетам ROI и условиям входа в пулы.</p>
-                <a href="https://wa.me/995595577405?text=Здравствуйте!%20Мне%20нужна%20персональная%20консультация%20по%20недвижимости." target="_blank" class="btn-whatsapp" style="padding: 14px 28px; font-size: 15px; background: white; color: var(--emerald-dark); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">💬 Написать в WhatsApp 24/7</a>
+                <a href="https://wa.me/995595577405?text=Здравствуйте!%20Мне%20нужна%20персональная%20консультация%20по%20недвижимости." target="_blank" class="btn-whatsapp-main" style="background: white; color: var(--emerald-dark); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">💬 Написать в WhatsApp 24/7</a>
             </div>
 
         </div>
@@ -350,7 +362,7 @@
     <footer>
         <div class="container">
             <p>© 2026 СберНедвижка. Коммерческая недвижимость, инвест-пулы и сопровождение в Батуми.</p>
-            <p style="margin-top: 10px;">Канал в Telegram: <a href="https://t.me/batumi_commercial_invest" target="_blank">@batumi_commercial_invest</a> | WhatsApp: <a href="https://wa.me/995595577405" target="_blank">+995 595 57 74 05</a></p>
+            <p style="margin-top: 10px;">Telegram-канал с базой: <a href="https://t.me/batumi_commercial_invest" target="_blank">@batumi_commercial_invest</a> | WhatsApp: <a href="https://wa.me/995595577405" target="_blank">+995 595 57 74 05</a></p>
         </div>
     </footer>
 
